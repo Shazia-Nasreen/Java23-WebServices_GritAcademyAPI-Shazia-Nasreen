@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HomE Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<form id="createStudent" action="/createStudentForm" method="POST">
+    <label for="fName" >fName</label>
+    <input type="text" id="fName" name="fName" required>    <br>
+    <label for="lName">lName</label>
+    <input type="text" id="lName" name="lName" required>    <br>
+    <label for="town">town</label>
+    <input type="text" id="town" name="town" required>    <br>
+
+    <input type="submit" value="CREATE_STUDENT"><br>
+
+</form>
+<br>
+<hr>
+<br>
+<form action="removeStudentForm" method="POST">
+    id <input type="text" name="id" required>
+    <br>
+    <br>
+    <input type="submit" value="REMOVE_STUDENT">
+</form>
+<br>
+<hr>
+<br>
+<button onclick=location.href='/api/students/all'>SHOW ALL STUDENTS</button>
+
+</body>
+</html>
