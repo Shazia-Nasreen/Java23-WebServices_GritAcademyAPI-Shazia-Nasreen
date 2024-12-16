@@ -2,35 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>HomE Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<form id="createStudent" action="/createStudentForm" method="POST">
-    <label for="fName" >fName</label>
-    <input type="text" id="fName" name="fName" required>    <br>
-    <label for="lName">lName</label>
-    <input type="text" id="lName" name="lName" required>    <br>
-    <label for="town">town</label>
-    <input type="text" id="town" name="town" required>    <br>
+<!-- Form to Create Student -->
+<h2>Create Student</h2>
+<form id="createStudent" action="/api/students" method="POST">
+    <label for="fName">First Name:</label>
+    <input type="text" id="fName" name="fName" required> <br>
 
-    <input type="submit" value="CREATE_STUDENT"><br>
+    <label for="lName">Last Name:</label>
+    <input type="text" id="lName" name="lName" required> <br>
 
+    <label for="town">Town:</label>
+    <input type="text" id="town" name="town" required> <br>
+
+    <input type="submit" value="Create Student">
 </form>
-<br>
-<hr>
-<br>
-<form action="removeStudentForm" method="POST">
-    id <input type="text" name="id" required>
-    <br>
-    <br>
-    <input type="submit" value="REMOVE_STUDENT">
+
+<br><hr><br>
+
+<!-- Form to Remove Student -->
+<h2>Remove Student</h2>
+<form action="/api/students/deleteStudentById" method="POST">
+    <label for="id">Student ID:</label>
+    <input type="text" name="id" required> <br><br>
+    <input type="submit" value="Remove Student">
 </form>
-<br>
-<hr>
-<br>
-<button onclick=location.href='/api/students/all'>SHOW ALL STUDENTS</button>
+
+<br><hr><br>
+
+<!-- Button to Show All Students -->
+<h2>Show All Students</h2>
+<button onclick="location.href='/api/students/all'">Show All Students</button>
 
 </body>
 </html>
